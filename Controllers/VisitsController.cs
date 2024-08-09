@@ -7,9 +7,11 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using BW5.Models;
 using ApplicationDbContex.Data;
+using Microsoft.AspNetCore.Authorization;
 
 namespace BW5.Controllers
 {
+    [Authorize(Roles = "Vet")]
     public class VisitsController : Controller
     {
         private readonly ApplicationDbContext _context;

@@ -7,9 +7,11 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using ApplicationDbContex.Data;
 using BW5.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace BW5.Controllers
 {
+    [Authorize(Roles = "Farmacista")]
     public class DrawersController : Controller
     {
         private readonly ApplicationDbContext _context;
