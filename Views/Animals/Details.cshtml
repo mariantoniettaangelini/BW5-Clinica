@@ -1,0 +1,50 @@
+﻿@model BW5.Models.Animal
+
+@{
+    ViewData["Title"] = "Dettagli";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Dettagli dell'Animale</h1>
+
+<table class="table table-bordered">
+    <tbody>
+        <tr>
+            <th class="col-sm-3">Data di Registrazione</th>
+            <td class="col-sm-9">@Html.DisplayFor(model => model.RegistrationDate)</td>
+        </tr>
+        <tr>
+            <th class="col-sm-3">Nome</th>
+            <td class="col-sm-9">@Html.DisplayFor(model => model.Name)</td>
+        </tr>
+        <tr>
+            <th class="col-sm-3">Tipo</th>
+            <td class="col-sm-9">@Html.DisplayFor(model => model.Type)</td>
+        </tr>
+        <tr>
+            <th class="col-sm-3">Colore del Manto</th>
+            <td class="col-sm-9">@Html.DisplayFor(model => model.CoatColor)</td>
+        </tr>
+        <tr>
+            <th class="col-sm-3">Data di Nascita</th>
+            <td class="col-sm-9">@Html.DisplayFor(model => model.BirthDate)</td>
+        </tr>
+        <tr>
+            <th class="col-sm-3">Microchip</th>
+            <td class="col-sm-9">@Html.DisplayFor(model => model.Microchip)</td>
+        </tr>
+        <tr>
+            <th class="col-sm-3">Nome del Proprietario</th>
+            <td class="col-sm-9">@Html.DisplayFor(model => model.OwnerFirstName)</td>
+        </tr>
+        <tr>
+            <th class="col-sm-3">Cognome del Proprietario</th>
+            <td class="col-sm-9">@Html.DisplayFor(model => model.OwnerLastName)</td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="text-right mt-3">
+    <a asp-action="Edit" asp-route-id="@Model?.Id" class="btn btn-primary">Modifica</a>
+    <a asp-action="Index" class="btn btn-secondary ml-2">Torna alla Lista</a>
+</div>

@@ -1,0 +1,59 @@
+﻿@model BW5.Models.Animal
+
+@{
+    ViewData["Title"] = "Elimina";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-5">
+    <h1 class="text-danger">Elimina</h1>
+    <h3>Sei sicuro di voler eliminare questa scheda?</h3>
+    <div class="card bg-light mb-3">
+        <div class="card-header bg-dark text-white">Animale</div>
+        <div class="card-body">
+            <table class="table table-bordered">
+                <tbody>
+                    <tr>
+                        <th>Data di Registrazione</th>
+                        <td>@Html.DisplayFor(model => model.RegistrationDate)</td>
+                    </tr>
+                    <tr>
+                        <th>Nome</th>
+                        <td>@Html.DisplayFor(model => model.Name)</td>
+                    </tr>
+                    <tr>
+                        <th>Tipo</th>
+                        <td>@Html.DisplayFor(model => model.Type)</td>
+                    </tr>
+                    <tr>
+                        <th>Colore del Manto</th>
+                        <td>@Html.DisplayFor(model => model.CoatColor)</td>
+                    </tr>
+                    <tr>
+                        <th>Data di Nascita</th>
+                        <td>@Html.DisplayFor(model => model.BirthDate)</td>
+                    </tr>
+                    <tr>
+                        <th>Microchip</th>
+                        <td>@Html.DisplayFor(model => model.Microchip)</td>
+                    </tr>
+                    <tr>
+                        <th>Nome del Proprietario</th>
+                        <td>@Html.DisplayFor(model => model.OwnerFirstName)</td>
+                    </tr>
+                    <tr>
+                        <th>Cognome del Proprietario</th>
+                        <td>@Html.DisplayFor(model => model.OwnerLastName)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="text-right">
+        <form asp-action="Delete" class="d-inline">
+            <input type="hidden" asp-for="Id" />
+            <button type="submit" class="btn btn-danger">Elimina</button>
+        </form>
+        <a asp-action="Index" class="btn btn-secondary ml-2">Torna alla Lista</a>
+    </div>
+</div>

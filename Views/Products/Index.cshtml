@@ -1,0 +1,42 @@
+﻿@model IEnumerable<BW5.Models.Product>
+
+@{
+    ViewData["Title"] = "Elenco Prodotti";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-5">
+    <h1>Elenco dei Prodotti</h1>
+    <p>
+        <a asp-action="Create" class="btn btn-primary">Crea Nuovo Prodotto</a>
+    </p>
+    <table class="table table-bordered">
+        <thead class="bg-dark text-white">
+            <tr>
+                <th>Nome</th>
+                <th>Tipo di Prodotto</th>
+                <th>Utilizzi</th>
+                <th>Indirizzo Fornitore</th>
+                <th>ID Cassetto</th>
+                <th>Azioni</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.Name)</td>
+                    <td>@Html.DisplayFor(modelItem => item.ProductType)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Uses)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Supplier.Address)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Drawer.Id)</td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-primary">Modifica</a>
+                        <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm btn-info">Dettagli</a>
+                        <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-danger">Elimina</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

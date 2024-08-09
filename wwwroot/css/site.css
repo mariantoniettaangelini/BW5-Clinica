@@ -1,0 +1,160 @@
+html {
+    font-size: 14px;
+    position: relative;
+    min-height: 100%;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+body {
+    margin-bottom: 60px;
+}
+
+.sidebar {
+    height: 100%;
+    width: 200px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #343a40;
+    padding-top: 20px;
+    color: #f8f9fa;
+}
+
+.sidebar .logo {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.sidebar .logo img {
+    max-width: 120px;
+    height: auto;
+    border-radius: 15%;
+}
+
+.sidebar a {
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #f8f9fa;
+    display: block;
+}
+
+.sidebar a:hover {
+    background-color: #007bff;
+    color: #f8f9fa;
+}
+
+.content {
+    margin-left: 260px;
+    padding: 20px;
+    color: #343a40;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    min-height: calc(100vh - 80px); /* Assicura che il contenuto riempia lo spazio sopra il footer */
+}
+
+footer {
+    background-color: #343a40;
+    color: #adb5bd;
+    padding: 10px 0; /* Riduce l'altezza del footer */
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: auto; /* Permette al contenuto del footer di determinare l'altezza */
+}
+
+footer h5 {
+    color: #61dafb;
+    margin-bottom: 10px; /* Riduce lo spazio sotto il titolo */
+}
+
+footer a {
+    color: #61dafb;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+.bg-light {
+    background-color: #f8f9fa;
+}
+
+.bg-dark {
+    background-color: #343a40;
+    color: #f8f9fa;
+}
+
+.form-control {
+    border: 1px solid #ccc;
+    border-radius: 0.25rem;
+    box-shadow: none;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.btn {
+    color: #ffffff;
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+    border-color: #004085;
+}
+
+.btn-info, .btn-secondary, .btn-primary {
+    background-color: #17a2b8;
+    border-color: #138496;
+}
+
+.btn-info:hover, .btn-secondary:hover, .btn-primary:hover {
+    background-color: #138496;
+    color: #ffffff;
+}
+
+a, .text-primary {
+    color: #007bff;
+}
+
+a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+.table {
+    width: 100%;
+    margin-bottom: 1rem;
+    color: #212529;
+    font-size: 0.9rem;
+}
+
+.table th,
+.table td {
+    padding: 0.75rem;
+    vertical-align: top;
+    border-top: 1px solid #dee2e6;
+}
+
+.col-sm-3 {
+    width: 25%;
+}
+
+.col-sm-9 {
+    width: 75%;
+}
+
+.text-right {
+    text-align: right;
+}

@@ -1,0 +1,84 @@
+﻿@{
+    ViewData["Title"] = "CustomReport";
+}
+
+<h1>Lista Vendite</h1>
+
+<div>
+    <h2>Vendite effettuate il:</h2>
+    <input type="date" id="saleDate" />
+    <button id="searchByDateBtn" class="btn btn-primary">Cerca</button>
+</div>
+
+<hr />
+
+<div>
+    <h2>Acquirente:</h2>
+    <input type="text" id="customerFiscalCode" placeholder="Inserisci il Codice Fiscale del Cliente" />
+    <button id="searchByCustomerBtn" class="btn btn-primary">Cerca</button>
+</div>
+
+<!-- Modale per vendite per data -->
+<div class="modal fade" id="salesByDateModal" tabindex="-1" aria-labelledby="salesByDateModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="salesByDateModalLabel">Vendite per Data</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Chiudi"></button>
+            </div>
+            <div class="modal-body" id="salesByDateResult">
+                <!-- Il contenuto della vista parziale verrà caricato qui -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modale per vendite per cliente -->
+<div class="modal fade" id="salesByCustomerModal" tabindex="-1" aria-labelledby="salesByCustomerModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="salesByCustomerModalLabel">Vendite per Cliente</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Chiudi"></button>
+            </div>
+            <div class="modal-body" id="salesByCustomerResult">
+                <!-- Il contenuto della vista parziale verrà caricato qui -->
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script>
+        $(document).ready(function () {
+            $('#searchByDateBtn').click(function () {
+                var saleDate = $('#saleDate').val();
+                if (saleDate) {
+                    $.ajax({
+                        url: '@Url.Action("GetSalesByDate", "Sales")',
+                        data: { date: saleDate },
+                        success: function (data) {
+                            $('#salesByDateResult').html(data);
+                            $('#salesByDateModal').modal('show');
+                        }
+                    });
+                }
+            });
+
+            $('#searchByCustomerBtn').click(function () {
+                var fiscalCode = $('#customerFiscalCode').val();
+                if (fiscalCode) {
+                    $.ajax({
+                        url: '@Url.Action("GetSalesByCustomer", "Sales")',
+                        data: { fiscalCode: fiscalCode },
+                        success: function (data) {
+                            $('#salesByCustomerResult').html(data);
+                            $('#salesByCustomerModal').modal('show');
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+}

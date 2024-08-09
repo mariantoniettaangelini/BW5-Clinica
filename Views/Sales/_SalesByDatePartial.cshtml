@@ -1,0 +1,23 @@
+﻿@model IEnumerable<BW5.Models.Sales>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Product</th>
+            <th>Customer Fiscal Code</th>
+            <th>Prescription Number</th>
+            <th>Sale Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var sale in Model)
+        {
+            <tr>
+                <td>@sale.Product.Name</td>
+                <td>@sale.CustomerFiscalCode</td>
+                <td>@sale.PrescriptionNumber</td>
+                <td>@sale.SaleDate.ToShortDateString()</td>
+            </tr>
+        }
+    </tbody>
+</table>

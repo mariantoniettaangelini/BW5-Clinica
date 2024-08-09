@@ -1,0 +1,46 @@
+﻿@{
+    ViewData["Title"] = "Ricerca Animale per Microchip";
+}
+
+<h1>Ricerca Animale per Microchip</h1>
+
+<div class="form-group">
+    <label for="microchipNumber">Numero di Microchip</label>
+    <input type="text" id="microchipNumber" class="form-control" placeholder="Inserisci il numero di microchip">
+</div>
+<button id="searchButton" class="btn btn-primary">Cerca</button>
+
+<div id="searchResult" class="mt-4"></div>
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            $('#searchButton').click(function () {
+                var microchipNumber = $('#microchipNumber').val();
+                $.ajax({
+                    url: '@Url.Action("SearchByMicrochip", "Recoveries")',
+                    type: 'GET',
+                    data: { microchipNumber: microchipNumber },
+                    success: function (data) {
+                        var resultDiv = $('#searchResult');
+                        resultDiv.empty();
+                        if (data.found) {
+                            var animal = data.animal;
+                            var resultHtml = '<div class="card">' +
+                                '<img src="' + animal.PhotoUrl + '" class="card-img-top" alt="Foto dell\'animale">' +
+                                '<div class="card-body">' +
+                                '<h5 class="card-title">' + animal.Name + '</h5>' +
+                                '<p class="card-text"><strong>Tipo:</strong> ' + animal.Type + '</p>' +
+                                '<p class="card-text"><strong>Colore del Mantello:</strong> ' + animal.CoatColor + '</p>' +
+                                '<p class="card-text"><strong>Data di Ammissione:</strong> ' + new Date(animal.AdmissionDate).toLocaleDateString() + '</p>' +
+                                '</div></div>';
+                            resultDiv.html(resultHtml);
+                        } else {
+                            resultDiv.html('<div class="alert alert-warning">' + data.message + '</div>');
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+}

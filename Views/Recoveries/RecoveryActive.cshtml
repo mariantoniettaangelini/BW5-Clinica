@@ -1,0 +1,57 @@
+﻿@model IEnumerable<BW5.Models.Recovery>
+
+@{
+    ViewData["Title"] = "Animali Ricoverati Attualmente";
+}
+
+<h1>Animali Ricoverati Attualmente</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Nome
+            </th>
+            <th>
+                Tipo
+            </th>
+            <th>
+                Colore del Manto
+            </th>
+            <th>
+                Data di Ammissione
+            </th>
+            <th>
+                Foto
+            </th>
+            <th>Azioni</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Type)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CoatColor)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AdmissionDate)
+                </td>
+                <td>
+                    <img src="@item.PhotoUrl" alt="Foto di @item.Name" style="width: 100px; height: 100px; object-fit: cover;" />
+                </td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@item.Id">Dettagli</a> |
+                    <a asp-action="Edit" asp-route-id="@item.Id">Modifica</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Elimina</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

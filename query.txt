@@ -1,0 +1,103 @@
+INSERT INTO [dbo].[Shelters] (RegistrationDate, Name, Type, CoatColor, BirthDate, Microchip, AdmissionDate, DischargeDate, PhotoUrl)
+VALUES 
+('2020-01-01', 'Leo', 'Cane', 'Marrone', '2015-05-05', '123456789A', '2020-01-10', NULL, 'http://example.com/leo.jpg'),
+('2020-02-05', 'Gina', 'Gatto', 'Bianco', '2017-07-07', '987654321B', '2020-02-15', NULL, 'http://example.com/gina.jpg'),
+('2020-03-10', 'Buddy', 'Cane', 'Nero', '2018-08-15', '234567890C', '2020-03-20', NULL, 'http://example.com/buddy.jpg'),
+('2020-04-15', 'Misty', 'Gatto', 'Grigio', '2016-06-06', '765432109D', '2020-04-25', NULL, 'http://example.com/misty.jpg'),
+('2020-05-20', 'Rocky', 'Cane', 'Bianco', '2014-04-04', '345678901E', '2020-05-30', NULL, 'http://example.com/rocky.jpg'),
+('2020-06-25', 'Jasper', 'Gatto', 'Nero', '2019-09-09', '654321098F', '2020-06-05', NULL, 'http://example.com/jasper.jpg'),
+('2020-07-30', 'Duke', 'Cane', 'Beige', '2013-03-03', '456789012G', '2020-07-11', NULL, 'http://example.com/duke.jpg'),
+('2020-08-05', 'Lily', 'Gatto', 'Tigrato', '2018-02-02', '321098765H', '2020-08-16', NULL, 'http://example.com/lily.jpg'),
+('2020-09-10', 'Max', 'Cane', 'Rosso', '2011-01-01', '567890123I', '2020-09-21', NULL, 'http://example.com/max.jpg'),
+('2020-10-15', 'Bella', 'Gatto', 'Calico', '2015-12-12', '890123456J', '2020-10-26', NULL, 'http://example.com/bella.jpg');
+
+INSERT INTO [dbo].[Sales] (CustomerFiscalCode, ProductId, PrescriptionNumber, SaleDate)
+VALUES 
+('FRSLGI80A01F205N', 1, 'RX001', '2020-01-15'),
+('RSSMRA85M65Z404V', 2, 'RX002', '2020-02-20'),
+('BNCGPP75P08G273K', 3, 'RX003', '2020-03-25'),
+('NRILAU70D42H501P', 4, 'RX004', '2020-04-30'),
+('MZZSLV80A01F839J', 5, 'RX005', '2020-05-05'),
+('FRNFNC85L51E379U', 6, 'RX006', '2020-06-10'),
+('CTIFBA80A41D612H', 7, 'RX007', '2020-07-15'),
+('PSOANN92E45G224E', 8, 'RX008', '2020-08-20'),
+('DCLDRA88M01Z600U', 9, 'RX009', '2020-09-25'),
+('GNTMRC73P14F205X', 10, 'RX010', '2020-10-30');
+
+INSERT INTO [dbo].[Drawers] (Number, CabinetId)
+VALUES 
+(1, 1), (2, 1), (3, 1),
+(1, 2), (2, 2),
+(1, 3), (2, 3), (3, 3),
+(1, 4), (2, 4),
+(1, 5), (2, 5),
+(1, 6), (2, 6),
+(1, 7), (2, 7),
+(1, 8), (2, 8),
+(1, 9), (2, 9),
+(1, 10), (2, 10);
+
+INSERT INTO [dbo].[Cabinets] (Code)
+VALUES 
+('A001'),
+('A002'),
+('A003'),
+('A004'),
+('A005'),
+('A006'),
+('A007'),
+('A008'),
+('A009'),
+('A010');
+
+INSERT INTO [dbo].[Visits] (VisitDate, ObjectiveExam, PrescribedTreatment, AnimalId)
+VALUES 
+('2020-01-10', 'Controllo generale', 'Vaccino B', 2),
+('2020-02-15', 'Esame dermatologico', 'Shampoo G', 4),
+('2020-03-20', 'Controllo dentale', 'Gel cicatrizzante I', 6),
+('2020-04-25', 'Lesione alla zampa', 'Antinfiammatorio E', 8),
+('2020-05-30', 'Problemi respiratori', 'Antibiotico A', 10),
+('2020-06-05', 'Check-up annuale', 'Integratore D', 1),
+('2020-07-11', 'Infezione all'occhio', 'Collirio J', 3),
+('2020-08-16', 'Problemi di peso', 'Cibo speciale H', 5),
+('2020-09-21', 'Infestazione di pulci', 'Collare antipulci F', 7),
+('2020-10-26', 'Visita pre-viaggio', 'Antiparassitario C', 9);
+
+INSERT INTO [dbo].[Animals] (Name, Type, CoatColor, OwnerFirstName, OwnerLastName)
+VALUES 
+('Fido', 'Cane', 'Marrone', 'Luigi', 'Verdi'),
+('Micio', 'Gatto', 'Bianco', 'Maria', 'Rossi'),
+('Rex', 'Cane', 'Nero', 'Giuseppe', 'Bianchi'),
+('Bella', 'Gatto', 'Grigio', 'Sara', 'Neri'),
+('Toby', 'Cane', 'Bianco', 'Marco', 'Gialli'),
+('Luna', 'Gatto', 'Nero', 'Laura', 'Marrone'),
+('Charlie', 'Cane', 'Beige', 'Francesca', 'Azzurri'),
+('Oscar', 'Gatto', 'Tigrato', 'Simone', 'Verdi'),
+('Max', 'Cane', 'Rosso', 'Anna', 'Bianco'),
+('Nina', 'Gatto', 'Calico', 'Claudio', 'Rosso');
+
+INSERT INTO [dbo].[Products] (Name, ProductType, Uses, SupplierId)
+VALUES 
+('Antibiotico A', 'Medicinale', 'Infezioni batteriche', 1),
+('Vaccino B', 'Vaccino', 'Prevenzione malattie', 2),
+('Antiparassitario C', 'Cura', 'Eliminazione parassiti', 3),
+('Integratore D', 'Supplemento', 'Miglioramento salute generale', 4),
+('Antinfiammatorio E', 'Medicinale', 'Riduzione infiammazioni', 5),
+('Collare antipulci F', 'Accessorio', 'Prevenzione pulci e zecche', 6),
+('Shampoo G', 'Cura', 'Igiene del pelo', 7),
+('Cibo speciale H', 'Alimento', 'Dieta speciale', 8),
+('Gel cicatrizzante I', 'Cura', 'Guarigione ferite', 9),
+('Collirio J', 'Medicinale', 'Cure oculari', 10);
+
+INSERT INTO [dbo].[Suppliers] (Name, Address, ContactName, ContactPhone)
+VALUES 
+('ForniVet Srl', 'Via Roma 123, Roma', 'Luca Bianchi', '3331234567'),
+('PetSupply SpA', 'Via Milano 456, Milano', 'Sara Rossi', '3479876543'),
+('VetGoods Co', 'Corso Venezia 789, Venezia', 'Mario Verdi', '3397654321'),
+('AnimalHealth Ltd', 'Strada Torino 234, Torino', 'Anna Neri', '3216549870'),
+('Care4Pets GmbH', 'Via Firenze 567, Firenze', 'Laura Gialli', '3456789123'),
+('GlobalVet Inc', 'Viale Napoli 890, Napoli', 'Francesco Marrone', '3491122334'),
+('PetCare Essentials', 'Via Palermo 321, Palermo', 'Giorgio Azzurri', '3378899001'),
+('VetSupplies Plus', 'Corso Bari 654, Bari', 'Silvia Verdi', '3334455667'),
+('HealthyPet Supplies', 'Via Genova 987, Genova', 'Luigi Bianco', '3201234567'),
+('EcoVet Products', 'Strada Trieste 210, Trieste', 'Claudia Rosso', '3389876543');

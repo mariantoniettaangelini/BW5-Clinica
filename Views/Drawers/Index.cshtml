@@ -1,0 +1,43 @@
+﻿@model IEnumerable<BW5.Models.Drawer>
+
+@{
+    ViewData["Title"] = "Indice";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Lista Cassetti</h1>
+
+<p>
+    <a asp-action="Create">Crea Nuovo</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Numero
+            </th>
+            <th>
+                Armadio
+            </th>
+            <th>Azioni</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Number)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cabinet.Code)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Modifica</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Dettagli</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Elimina</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

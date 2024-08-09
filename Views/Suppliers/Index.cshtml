@@ -1,0 +1,40 @@
+﻿@model IEnumerable<BW5.Models.Supplier>
+
+@{
+    ViewData["Title"] = "Elenco Fornitori";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-5">
+    <h1>Elenco dei Fornitori</h1>
+    <p>
+        <a asp-action="Create" class="btn btn-primary">Aggiungi Nuovo Fornitore</a>
+    </p>
+    <table class="table table-bordered">
+        <thead class="bg-dark text-white">
+            <tr>
+                <th>Nome</th>
+                <th>Indirizzo</th>
+                <th>Nome del Contatto</th>
+                <th>Telefono del Contatto</th>
+                <th>Azioni</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.Name)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Address)</td>
+                    <td>@Html.DisplayFor(modelItem => item.ContactName)</td>
+                    <td>@Html.DisplayFor(modelItem => item.ContactPhone)</td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-primary">Modifica</a>
+                        <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm btn-info">Dettagli</a>
+                        <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-danger">Elimina</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

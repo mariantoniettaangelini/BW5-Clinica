@@ -1,0 +1,37 @@
+﻿@model BW5.Models.Cabinet
+
+@{
+    ViewData["Title"] = "Crea";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-5">
+    <h1>Aggiungi un Armadio</h1>
+    <h4>Dettagli dell'Armadio</h4>
+    <hr />
+    <div class="row">
+        <div class="col-md-6">
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="Code" class="control-label">Codice</label>
+                    <input asp-for="Code" class="form-control" />
+                    <span asp-validation-for="Code" class="text-danger"></span>
+                </div>
+                <div class="form-group text-right">
+                    <input type="submit" value="Crea" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="text-right mt-3">
+        <a asp-action="Index" class="btn btn-secondary">Torna all'Elenco</a>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

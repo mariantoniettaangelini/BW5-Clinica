@@ -1,0 +1,164 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - BW5</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/BW5.styles.css" asp-append-version="true" />
+    <style>
+    .sidebar {
+    height: 100%;
+    width: 200px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #343a40;
+    padding-top: 20px;
+    }
+
+    .sidebar .logo {
+    text-align: center;
+    margin-bottom: 20px;
+    }
+
+    .sidebar .logo img {
+    max-width: 120px;
+    height: auto;
+    border-radius: 15%;
+    }
+
+    .sidebar a {
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #61dafb;
+    display: block;
+    }
+
+    .sidebar a:hover {
+    background-color: #ddd;
+    }
+
+    .content {
+    margin-left: 260px;
+    padding: 20px;
+    background-color: #f8f9fa;
+    color: #343a40;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    min-height: calc(100vh - 80px); /* Assicura che il contenuto riempia lo spazio sopra il footer */
+    }
+
+    footer {
+    background-color: #343a40;
+    color: #adb5bd;
+    padding: 10px 0; /* Riduce l'altezza del footer */
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: auto; /* Permette al contenuto del footer di determinare l'altezza */
+    }
+
+    footer h5 {
+    color: #61dafb;
+    margin-bottom: 10px; /* Riduce lo spazio sotto il titolo */
+    }
+
+    footer a {
+    color: #61dafb;
+    text-decoration: none;
+    }
+
+    footer a:hover {
+    text-decoration: underline;
+    }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <!-- Spazio per il logo -->
+        <div class="logo">
+            <img src="~/images/logo_nosfondo.png" alt="Logo">
+        </div>
+
+        <a asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+        <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        <!--Farmacista-->
+        <a asp-area="" asp-controller="Animals" asp-action="Index">Gestione Animali</a>
+        <a asp-area="" asp-controller="Recoveries" asp-action="Index">Gestione Ricoveri</a> 
+        <a asp-area="" asp-controller="Visits" asp-action="Index">Gestione Visite</a>
+
+        <!--Veterinario-->
+        <a asp-area="" asp-controller="Cabinets" asp-action="Index">Gestione Armadi</a>
+        <a asp-area="" asp-controller="Drawers" asp-action="Index">Gestione Cassetti</a>
+        <a asp-area="" asp-controller="Products" asp-action="Index">Gestione Prodotti</a>
+        <a asp-area="" asp-controller="Sales" asp-action="Index">Gestione Vendite</a>
+        <a asp-area="" asp-controller="Suppliers" asp-action="Index">Gestione Fornitori</a>
+        <!-- Aggiungi altri link qui secondo le tue necessità -->
+    </div>
+    <div class="content">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+@*     <footer class="border-top footer  mt-5">
+        <div class="container">
+            <div class="row">
+                <!-- Sezione Contatti -->
+                <div class="col-md-4">
+                    <h5>Contatti</h5>
+                    <p>
+                        <strong>Indirizzo:</strong><br>
+                        Via degli Animali, 123<br>
+                        00100 Roma, Italia
+                    </p>
+                    <p>
+                        <strong>Telefono:</strong><br>
+                        +39 06 1234 5678
+                    </p>
+                    <p>
+                        <strong>Email:</strong><br>
+                        <a href="mailto:info@clinicaveterinaria.it">info@clinicaveterinaria.it</a>
+                    </p>
+                </div>
+                <!-- Sezione Orari di Apertura -->
+                <div class="col-md-4">
+                    <h5>Orari di Apertura</h5>
+                    <p>
+                        <strong>Lunedì - Venerdì:</strong><br>
+                        09:00 - 18:00
+                    </p>
+                    <p>
+                        <strong>Sabato:</strong><br>
+                        09:00 - 13:00
+                    </p>
+                    <p>
+                        <strong>Domenica:</strong><br>
+                        Chiuso
+                    </p>
+                </div>
+                <!-- Sezione Social Media -->
+                <div class="col-md-4">
+                    <h5>Seguici sui Social</h5>
+                    <a href="https://www.facebook.com/clinicaveterinaria" target="_blank">Facebook</a><br>
+                    <a href="https://www.instagram.com/clinicaveterinaria" target="_blank">Instagram</a><br>
+                    <a href="https://www.twitter.com/clinicaveterinaria" target="_blank">Twitter</a>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-12 text-center">
+                    &copy; 2024 - clinica - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                </div>
+            </div>
+        </div>
+    </footer> *@
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

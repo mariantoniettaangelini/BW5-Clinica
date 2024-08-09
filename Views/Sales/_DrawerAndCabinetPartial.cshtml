@@ -1,0 +1,21 @@
+﻿@model IEnumerable<BW5.Models.Drawer>
+
+<h1>Drawer and Cabinet Data</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Drawer Number</th>
+            <th>Cabinet Code</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var drawer in Model)
+        {
+            <tr>
+                <td>@drawer.Number</td>
+                <td>@drawer.Cabinet?.Code</td> <!-- Usare l'operatore ?. per evitare null reference -->
+            </tr>
+        }
+    </tbody>
+</table>

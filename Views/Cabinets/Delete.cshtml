@@ -1,0 +1,25 @@
+﻿@model BW5.Models.Cabinet
+
+@{
+    ViewData["Title"] = "Elimina";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-5">
+    <h1>Elimina Armadio</h1>
+    <h3>Sei sicuro di voler distruggere questo armadio?</h3>
+    <div>
+        <h4>Dettagli dell'Armadio</h4>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-2">Codice:</dt>
+            <dd class="col-sm-10">@Html.DisplayFor(model => model.Code)</dd>
+        </dl>
+
+        <form asp-action="Delete" class="mt-4">
+            <input type="hidden" asp-for="Id" />
+            <input type="submit" value="Elimina" class="btn btn-danger" />
+            <a asp-action="Index" class="btn btn-secondary ml-2">Torna all'Elenco</a>
+        </form>
+    </div>
+</div>
