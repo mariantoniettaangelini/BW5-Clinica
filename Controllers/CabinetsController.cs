@@ -52,8 +52,6 @@ namespace BW5.Controllers
         }
 
         // POST: Cabinets/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Code")] Cabinet cabinet)
@@ -84,8 +82,6 @@ namespace BW5.Controllers
         }
 
         // POST: Cabinets/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,Code")] Cabinet cabinet)

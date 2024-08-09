@@ -85,19 +85,17 @@
         </div>
 
         <a asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-        <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         <!--Farmacista-->
-        <a asp-area="" asp-controller="Animals" asp-action="Index">Gestione Animali</a>
-        <a asp-area="" asp-controller="Recoveries" asp-action="Index">Gestione Ricoveri</a> 
-        <a asp-area="" asp-controller="Visits" asp-action="Index">Gestione Visite</a>
+        <a asp-area="" asp-controller="Recoveries" asp-action="Index">Cuccioli in Cura</a>
+        <a asp-area="" asp-controller="Visits" asp-action="Index">Agenda Visite</a>
 
         <!--Veterinario-->
-        <a asp-area="" asp-controller="Cabinets" asp-action="Index">Gestione Armadi</a>
-        <a asp-area="" asp-controller="Drawers" asp-action="Index">Gestione Cassetti</a>
-        <a asp-area="" asp-controller="Products" asp-action="Index">Gestione Prodotti</a>
-        <a asp-area="" asp-controller="Sales" asp-action="Index">Gestione Vendite</a>
-        <a asp-area="" asp-controller="Suppliers" asp-action="Index">Gestione Fornitori</a>
-        <a asp-area="" asp-controller="Home" asp-action="Logout">Logout</a>
+        <a asp-area="" asp-controller="Cabinets" asp-action="Index">Farmacia della Clinica</a>
+        <a asp-area="" asp-controller="Drawers" asp-action="Index">Cassetti Medici</a>
+        <a asp-area="" asp-controller="Products" asp-action="Index">Prodotti</a>
+        <a asp-area="" asp-controller="Sales" asp-action="Index">Vendite</a>
+        <a asp-area="" asp-controller="Suppliers" asp-action="Index">Fornitori e Ditte</a>
+        <a asp-area="" asp-controller="Home" asp-action="Logout">Esci dalla Cuccia</a>
         <!-- Aggiungi altri link qui secondo le tue necessità -->
     </div>
     <div class="content">
@@ -106,57 +104,7 @@
         </main>
     </div>
 
-@*     <footer class="border-top footer  mt-5">
-        <div class="container">
-            <div class="row">
-                <!-- Sezione Contatti -->
-                <div class="col-md-4">
-                    <h5>Contatti</h5>
-                    <p>
-                        <strong>Indirizzo:</strong><br>
-                        Via degli Animali, 123<br>
-                        00100 Roma, Italia
-                    </p>
-                    <p>
-                        <strong>Telefono:</strong><br>
-                        +39 06 1234 5678
-                    </p>
-                    <p>
-                        <strong>Email:</strong><br>
-                        <a href="mailto:info@clinicaveterinaria.it">info@clinicaveterinaria.it</a>
-                    </p>
-                </div>
-                <!-- Sezione Orari di Apertura -->
-                <div class="col-md-4">
-                    <h5>Orari di Apertura</h5>
-                    <p>
-                        <strong>Lunedì - Venerdì:</strong><br>
-                        09:00 - 18:00
-                    </p>
-                    <p>
-                        <strong>Sabato:</strong><br>
-                        09:00 - 13:00
-                    </p>
-                    <p>
-                        <strong>Domenica:</strong><br>
-                        Chiuso
-                    </p>
-                </div>
-                <!-- Sezione Social Media -->
-                <div class="col-md-4">
-                    <h5>Seguici sui Social</h5>
-                    <a href="https://www.facebook.com/clinicaveterinaria" target="_blank">Facebook</a><br>
-                    <a href="https://www.instagram.com/clinicaveterinaria" target="_blank">Instagram</a><br>
-                    <a href="https://www.twitter.com/clinicaveterinaria" target="_blank">Twitter</a>
-                </div>
-            </div>
-            <div class="row mt-3">
-                <div class="col-12 text-center">
-                    &copy; 2024 - clinica - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                </div>
-            </div>
-        </div>
-    </footer> *@
+
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
